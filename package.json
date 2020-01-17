@@ -1,0 +1,22 @@
+{
+  "name": "lovelab-batch",
+  "version": "1.0.0",
+  "description": "Batch server of LoveLab",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "tsc && node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/basd4g/lovelab-batch.git"
+  },
+  "author": "baskk4.dt@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/basd4g/lovelab-batch/issues"
+  },
+  "homepage": "https://github.com/basd4g/lovelab-batch#readme",
+  "dependencies": {
+    "typescript": "^3.7.5"
+  }
+}
