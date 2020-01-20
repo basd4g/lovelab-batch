@@ -10,7 +10,13 @@ interface ExcutingInterval  {
 }
 
 const excutePeriodic = (when:ExcutingInterval, job:()=>void ) => {
-  const cronString = `${when.sec||'*'} ${when.min||'*'} ${when.hour||'*'} ${when.dayOfMonth||'*'} ${when.month||'*'} ${when.dayOfWeek||'*'}`;
+  const sec = when.sec==null?'*':when.sec.toString();
+  const min = when.min==null?'*':when.min.toString();
+  const hour = when.hour==null?'*':when.hour.toString();
+  const dayOfMonth = when.dayOfMonth==null?'*':when.dayOfMonth.toString();
+  const month = when.month==null?'*':when.month.toString();
+  const dayOfWeek = when.dayOfWeek==null?'*':when.dayOfWeek.toString();
+  const cronString = `${sec} ${min} ${hour} ${dayOfMonth} ${month} ${dayOfWeek}`
 
   const cronJob = new CronJob(cronString, job);
   cronJob.start();
@@ -26,7 +32,10 @@ const excuteOnTheHour = (job:()=>void) => {
     dayOfWeek:null
   };
 
-  excutePeriodic(excutingInterval, job);
+  excutePeriodic(excutingInterval, ()=>{
+    console.log(`${new Date().toISOString()}: Excute Periodic.`);
+    job();
+  });
 };
 
 export { excutePeriodic, excuteOnTheHour, ExcutingInterval };
