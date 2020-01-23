@@ -19,4 +19,6 @@ RUN npm install
 # アプリケーションのソースをバンドルする
 COPY . .
 
+RUN npm run compile
+
 CMD [ "npm", "start" ]
