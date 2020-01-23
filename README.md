@@ -1,6 +1,6 @@
 # lovelab-batch
 
-A batch server of [Lovelab](https://github.com/enpit2su-ics/2019-team-C/).
+A batch server of [Lovelab (private repository)](https://github.com/enpit2su-ics/2019-team-C/).
 
 Generate tasks from task generators.
 
@@ -36,6 +36,6 @@ MIT
 
 ## Reference
 
-- [lovelab-swift (iPhone app of lovelab)](https://github.com/enpit2su-ics/2019-team-C/)
+- [lovelab-swift (iPhone app of lovelab) (private repository)](https://github.com/enpit2su-ics/2019-team-C/)
 - [lovelab-api (API server of lovelab)](https://github.com/basd4g/lovelab-api)
   
