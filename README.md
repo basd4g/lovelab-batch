@@ -23,7 +23,7 @@ $ cp .env.example .env
 $ docker-compose up
 
 # Open https://localhost/api/v1 on browser.
-# docker-compose contains [lovelab-api](https://github.com/basd4g/lovelab-api)
+# docker-compose.yml contains [lovelab-api](https://github.com/basd4g/lovelab-api)
 ```
 
 ## License
@@ -36,6 +36,8 @@ MIT
 
 ## Reference
 
-- [lovelab-swift (iPhone app of lovelab) (private repository)](https://github.com/enpit2su-ics/2019-team-C/)
+- [lovelab-swift (iPhone app of lovelab) (private repository)](https://github.com/enpit2su-ics/2019-team-C)
 - [lovelab-api (API server of lovelab)](https://github.com/basd4g/lovelab-api)
+- [lovelab-api docker-hub](https://hub.docker.com/r/basd4g/lovelab-api)
+- [lovelab-batch docker-hub (this repository)](https://hub.docker.com/r/basd4g/lovelab-batch)
   
