@@ -3,7 +3,7 @@ version: '3.7'
 services:
   lovelab-batch:
     depends_on:
-      - lovelab-postgres
+      - lovelab-batch-postgres
       - lovelab-api
     build:
       context: .
@@ -14,26 +14,26 @@ services:
   lovelab-api:
     image: basd4g/lovelab-api
     depends_on:
-      - lovelab-postgres
+      - lovelab-batch-postgres
     env_file:
       - .env
     ports:
       - "0.0.0.0:80:3000"
-    command: ["./wait-for-postgres.sh","npm","start"]
-  lovelab-postgres:
+    command: ["./wait-for-postgres.sh","npm","run","server"]
+  lovelab-batch-postgres:
     image: postgres:11.6-alpine
-    container_name: lovelab-postgres
+    container_name: lovelab-batch-postgres
     expose:
       - "5432"
     volumes:
       - ./postgres-init:/docker-entrypoint-initdb.d:ro
-      - postgres-data-volume:/var/lib/postgresql/data/
+      - batch-postgres-data-volume:/var/lib/postgresql/data/
     hostname: $POSTGRES_HOST
     user: $POSTGRES_USER
     env_file:
       - .env
     restart: always
 volumes:
-  postgres-data-volume:
-    name: lovelab-postgres-data
+  batch-postgres-data-volume:
+    name: lovelab-batch-postgres-data
     driver: local
